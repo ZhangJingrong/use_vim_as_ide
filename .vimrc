@@ -1,4 +1,60 @@
-" 更新时间：2015-01-18 21:30:31
+" 更新时间：2015-07-29 22:30:31
+"添加了使用vundle 管理插件的功能，不再使用pathogen
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+"Plugin 'tpope/vim-fugitive'
+Plugin 'Yggdroot/indentLine'
+Plugin 'vim-scripts/a.vim'
+Plugin 'kshenoy/vim-signature'
+Plugin 'yegappan/grep'
+Plugin 'mileszs/ack.vim'
+Plugin 'dyng/ctrlsf.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'SirVer/ultisnips'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'fholgado/minibufexpl.vim'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9                                                                                                                                             
+Plugin 'user/L9', {'name': 'newL9'}
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
 
 " 定义快捷键的前缀，即 <Leader>
 let mapleader=";"
@@ -7,9 +63,9 @@ let mapleader=";"
 " 文件类型侦测
 
 " 开启文件类型侦测
-filetype on
+"filetype on
 " 根据侦测到的不同类型加载对应的插件
-filetype plugin on
+"filetype plugin on
 
 " <<
 
@@ -68,11 +124,11 @@ set wildmenu
 
 " <<
 
-" 插件管理
+" 插件管理 使用vundle 而不是pathogen
 " 将 pathogen 自身也置于独立目录中，需指定其路径
-runtime bundle/pathogen/autoload/pathogen.vim
+"runtime bundle/pathogen/autoload/pathogen.vim
 " 运行 pathogen
-execute pathogen#infect()
+"execute pathogen#infect()
 
 " 配色方案
 set background=dark
